@@ -24,14 +24,10 @@ input = () => {
       cloud.innerText = data.list[0].weather[0].main
       cityInput.value = ''
       iconId = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`
-
       icon = document.getElementById('icon')
-
       icon.setAttribute('src', iconId)
+      document.getElementById('weather').style.display = 'block'
 
       console.log(data.list);
     })
-
-
-
 }
