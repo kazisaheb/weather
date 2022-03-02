@@ -15,6 +15,8 @@ button {
 }
 #weather {
 	display: none;
+	flex-direction: column;
+	align-items: center;
 }
 #weather img {
 	border: 5px solid;

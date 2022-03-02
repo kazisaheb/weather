@@ -21,9 +21,14 @@ input = () => {
       cloud.innerText = data.list[0].weather[0].main
       cityInput.value = ''
       iconId = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`
+
       icon = document.getElementById('icon')
       icon.setAttribute('src', iconId)
-      document.getElementById('weather').style.display = 'block'
+
+      favicon = document.getElementById('favicon')
+      favicon.setAttribute('href', iconId)
+
+      document.getElementById('weather').style.display = 'flex'
     })
   cityInput.focus()
 }
