@@ -10,8 +10,16 @@ section {
 	flex-direction: column;
 	align-items: center;
 }
+#cityInput,
 button {
 	margin-top: 10px;
+	background-color: deepskyblue;
+	color: white;
+	padding: 5px 15px;
+	border: 2px solid;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
 }
 #weather {
 	display: none;

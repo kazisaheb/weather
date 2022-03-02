@@ -1,7 +1,8 @@
 apiKey = 'dcfb20b1418c65a124c79fabd0c38ee1'
 input = () => {
   cityInput = document.getElementById('cityInput')
-  cityName = document.getElementById('cityName')
+  if (cityInput.value != '')
+    cityName = document.getElementById('cityName')
   fetch(`https://api.openweathermap.org/data/2.5/find?q=${cityInput.value}&appid=${apiKey}&units=metric`)
     .then(res => res.json())
     .then(data => {
@@ -22,5 +23,4 @@ input = () => {
       document.getElementById('weather').style.display = 'flex'
     })
   cityInput.value = ''
-  cityInput.focus()
 }
