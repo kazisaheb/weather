@@ -9,14 +9,13 @@ input = () => {
   cityInput = document.getElementById('cityInput')
   cityName = document.getElementById('cityName')
 
-  url = `http://api.openweathermap.org/data/2.5/find?q=${cityInput.value}&appid=${apiKey}&units=metric`
-
-  fetch(url)
+  fetch(`http://api.openweathermap.org/data/2.5/find?q=${cityInput.value}&appid=${apiKey}&units=metric`)
     .then(res => res.json())
     .then(data => {
       temper = document.getElementById('temper')
       cityName.innerText = data.list[0].name
 
+      // Dynamic title
       title = document.getElementById('title')
       title.innerText = 'Weather of ' + data.list[0].name
 
@@ -29,6 +28,7 @@ input = () => {
       icon = document.getElementById('icon')
       icon.setAttribute('src', iconId)
 
+      // Dynamic favicon
       favicon = document.getElementById('favicon')
       favicon.setAttribute('href', iconId)
 
