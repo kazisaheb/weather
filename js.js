@@ -16,10 +16,14 @@ input = () => {
     .then(data => {
       temper = document.getElementById('temper')
       cityName.innerText = data.list[0].name
+
+      title = document.getElementById('title')
+      title.innerText = 'Weather of ' + data.list[0].name
+
       temper.innerText = data.list[0].main.temp + ' °C'
       cloud = document.getElementById('cloud')
       cloud.innerText = data.list[0].weather[0].main
-      cityInput.value = ''
+
       iconId = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`
 
       icon = document.getElementById('icon')
@@ -30,5 +34,6 @@ input = () => {
 
       document.getElementById('weather').style.display = 'flex'
     })
+  cityInput.value = ''
   cityInput.focus()
 }
